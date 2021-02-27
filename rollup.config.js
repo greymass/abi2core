@@ -7,6 +7,8 @@ import pkg from './package.json'
 const name = pkg.name
 const license = fs.readFileSync('LICENSE').toString('utf-8').trim()
 const banner = `
+#!/usr/bin/env node
+
 /**
  * ${name} v${pkg.version}
  * ${pkg.homepage}
