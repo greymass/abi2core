@@ -1,8 +1,7 @@
 @greymass/abi2core
 ==================
 
-Greymass TypeScript library template, intended for packages that work both in the browser and node.js.
-`@types/node` are installed only for tests, don't rely on any node.js types or imports inside `src/` (no `buffer`, `crypto` imports etc, they can be filled for browser but will bloat the bundle 100x)
+Library and command line tool to generate [@greymass/eosio](https://github.com/greymass/eosio-core) types from EOSIO ABI definitions.
 
 ## Installation
 
