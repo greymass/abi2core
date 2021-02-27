@@ -1,0 +1,47 @@
+{
+    "name": "@greymass/abi2core",
+    "description": "Library and command line tool to generate @greymass/eosio types from EOSIO ABI definitions",
+    "version": "1.0.0",
+    "homepage": "https://github.com/greymass/abi2core",
+    "license": "BSD-3-Clause",
+    "main": "lib/abi2core.js",
+    "module": "lib/abi2core.m.js",
+    "types": "lib/abi2core.d.ts",
+    "bin": {
+        "abi2core": "lib/abi2core.js"
+    },
+    "sideEffects": false,
+    "files": [
+        "lib/*",
+        "src/*"
+    ],
+    "scripts": {
+        "prepare": "make"
+    },
+    "dependencies": {
+        "@greymass/eosio": "^0.3.0",
+        "argparse": "^2.0.1",
+        "tslib": "^2.1.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^8.1.1",
+        "@types/argparse": "^2.0.5",
+        "@types/mocha": "^8.0.3",
+        "@types/node": "^14.14.28",
+        "@typescript-eslint/eslint-plugin": "^4.15.1",
+        "@typescript-eslint/parser": "^4.15.1",
+        "assert": "^2.0.0",
+        "eslint": "^7.19.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-plugin-prettier": "^3.2.0",
+        "gh-pages": "^3.1.0",
+        "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
+        "prettier": "^2.2.1",
+        "rollup": "^2.38.2",
+        "rollup-plugin-dts": "^2.0.0",
+        "ts-node": "^9.1.0",
+        "typedoc": "^0.20.25",
+        "typescript": "^4.1.2"
+    }
+}
