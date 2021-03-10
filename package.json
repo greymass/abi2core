@@ -7,6 +7,9 @@
     "main": "lib/abi2core.js",
     "module": "lib/abi2core.m.js",
     "types": "lib/abi2core.d.ts",
+    "engines": {
+        "node": ">=12"
+    },
     "bin": {
         "abi2core": "lib/abi2core.js"
     },

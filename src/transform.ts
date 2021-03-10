@@ -124,7 +124,7 @@ export default function transform(abiDef: ABIDef) {
     if (sortedImports.length > 0) {
         let importDef = sortedImports.join(', ')
         if (importDef.length > 70) {
-            importDef = '\n    ' + importDef.replaceAll(', ', ',\n    ') + ',\n'
+            importDef = '\n    ' + importDef.replace(/, /g, ',\n    ') + ',\n'
         }
         out.unshift(`import {${importDef}} from '@greymass/eosio'`)
         out.unshift('')
