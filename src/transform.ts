@@ -47,7 +47,7 @@ export default function transform(abiDef: ABIDef) {
         if (builtin) {
             imports.add(builtin.import)
         }
-        return builtin ? builtin.name : snakeToPascal(type.name)
+        return builtin ? builtin.name : snakeToPascal(sanitizeTypeName(type.name))
     }
 
     for (const type of allTypes) {
@@ -59,12 +59,12 @@ export default function transform(abiDef: ABIDef) {
             }
             const baseType = getTypeName(type.ref)
             out.push(`@TypeAlias('${type.name}')`)
-            out.push(`class ${snakeToPascal(type.name)} extends ${baseType} {}`)
+            out.push(`class ${getTypeName(type)} extends ${baseType} {}`)
             out.push('')
         } else if (type.fields) {
             const baseClass = type.base ? snakeToPascal(type.base.name) : 'Struct'
             out.push(`@Struct.type('${type.name}')`)
-            out.push(`export class ${snakeToPascal(type.name)} extends ${baseClass} {`)
+            out.push(`export class ${getTypeName(type)} extends ${baseClass} {`)
             for (const field of type.fields) {
                 let fieldType = getTypeName(field.type)
                 let fieldDef = fieldType
@@ -115,7 +115,7 @@ export default function transform(abiDef: ABIDef) {
                 return name
             })
             out.push(`@Variant.type('${type.name}', [${variantTypes.join(', ')}])`)
-            out.push(`class ${snakeToPascal(type.name)} extends Variant {}`)
+            out.push(`class ${getTypeName(type)} extends Variant {}`)
             out.push('')
         }
     }
@@ -212,4 +212,9 @@ function getBuiltin(type: ABI.ResolvedType) {
         default:
             return null
     }
+}
+
+/** Makes sure the type names declared by the ABI are valid TypeScript. */
+function sanitizeTypeName(name: string): string {
+    return name.replace(/[^a-zA-Z0-9_]/g, '_')
 }

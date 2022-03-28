@@ -14,7 +14,7 @@ export default class Toposort<T = string> {
         }
     }
 
-    sort() {
+    sort(): T[] {
         const nodes: (T | false)[] = []
         for (const edge of this.edges) {
             for (const node of edge) {
