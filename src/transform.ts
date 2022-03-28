@@ -45,7 +45,13 @@ export default function transform(abiDef: ABIDef) {
     const getTypeName = (type: ABI.ResolvedType) => {
         const builtin = getBuiltin(type)
         if (builtin) {
-            imports.add(builtin.import)
+            if (allTypes.find((t) => t.name === type.name)) {
+                process.stderr.write(
+                    `WARNING: ABI re-declares builtin: "${type.name}". This will result in undefined behavior.\n`
+                )
+            } else {
+                imports.add(builtin.import)
+            }
         }
         return builtin ? builtin.name : snakeToPascal(sanitizeTypeName(type.name))
     }
