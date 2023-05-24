@@ -1,7 +1,7 @@
 {
     "name": "@greymass/abi2core",
     "description": "Library and command line tool to generate @wharfkit/antelope types from Antelope ABI definitions",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "homepage": "https://github.com/greymass/abi2core",
     "license": "BSD-3-Clause",
     "main": "lib/abi2core.js",
