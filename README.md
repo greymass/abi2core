@@ -1,11 +1,10 @@
-@greymass/abi2core
-==================
+# @greymass/abi2core
 
 Library and command line tool to generate [@wharfkit/antelope](https://github.com/wharfkit/antelope) types from Antelope ABI definitions.
 
 ## Installation
 
-The `@greymass/abi2core` package is distributed as a module on [npm](https://www.npmjs.com/package/PACKAGE).
+The `@greymass/abi2core` package is distributed as a module on [npm](https://www.npmjs.com/package/@greymass/abi2core).
 
 ```
 yarn global add @greymass/abi2core
