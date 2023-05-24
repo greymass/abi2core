@@ -1,6 +1,6 @@
 {
     "name": "@greymass/abi2core",
-    "description": "Library and command line tool to generate @greymass/eosio types from EOSIO ABI definitions",
+    "description": "Library and command line tool to generate @wharfkit/antelope types from Antelope ABI definitions",
     "version": "1.1.0",
     "homepage": "https://github.com/greymass/abi2core",
     "license": "BSD-3-Clause",
@@ -22,7 +22,7 @@
         "prepare": "make"
     },
     "dependencies": {
-        "@greymass/eosio": "^0.5.4",
+        "@wharfkit/antelope": "^0.7.0",
         "argparse": "^2.0.1",
         "tslib": "^2.1.0"
     },

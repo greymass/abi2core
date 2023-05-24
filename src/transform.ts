@@ -1,4 +1,4 @@
-import {ABI, ABIDef} from '@greymass/eosio'
+import {ABI, ABIDef} from '@wharfkit/antelope'
 import Toposort from './toposort'
 
 export default function transform(abiDef: ABIDef) {
@@ -60,7 +60,7 @@ export default function transform(abiDef: ABIDef) {
         if (type.ref) {
             if (type.ref.name === 'string' || type.ref.name === 'bool') {
                 throw new Error(
-                    '@greymass/eosio can not represent aliases to types represented by js natives (string and bool)'
+                    '@wharfkit/antelope can not represent aliases to types represented by js natives (string and bool)'
                 )
             }
             const baseType = getTypeName(type.ref)
@@ -132,7 +132,7 @@ export default function transform(abiDef: ABIDef) {
         if (importDef.length > 70) {
             importDef = '\n    ' + importDef.replace(/, /g, ',\n    ') + ',\n'
         }
-        out.unshift(`import {${importDef}} from '@greymass/eosio'`)
+        out.unshift(`import {${importDef}} from '@wharfkit/antelope'`)
         out.unshift('')
     }
 
